@@ -1,5 +1,41 @@
 ---
+import "@fontsource/inter";
+import "@fontsource/jetbrains-mono";
+import "../styles/global.css";
+import {
+	Github,
+	Linkedin,
+	Mail,
+	Code2,
+	Terminal,
+	Database,
+	Container,
+	GitBranch,
+	Coffee,
+	ArrowUpRight,
+} from "lucide-react";
 
+const socialLinks = [
+	{
+		href: "https://github.com/pablohuertasanchez",
+		icon: Github,
+		label: "GitHub",
+	},
+	{
+		href: "https://www.linkedin.com/in/pablo-huerta-sánchez-919b36297",
+		icon: Linkedin,
+		label: "LinkedIn",
+	},
+];
+
+const techStack = [
+	{ name: "Vue.js", icon: Code2 },
+	{ name: "TypeScript", icon: Terminal },
+	{ name: "Java (Spring)", icon: Coffee },
+	{ name: "Docker", icon: Container },
+	{ name: "Git", icon: GitBranch },
+	{ name: "MySQL", icon: Database },
+];
 ---
 
 <html lang="en">
@@ -8,9 +44,223 @@
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<meta name="viewport" content="width=device-width" />
 		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
+		<title>Pablo Huerta Sánchez | Software Developer</title>
+		<meta
+			name="description"
+			content="Portfolio of Pablo Huerta Sánchez, a Software Developer with an Engineering background."
+		/>
 	</head>
-	<body>
-		<h1>Astro</h1>
+	<body
+		class="bg-charcoal text-slate-200 font-sans antialiased selection:bg-electric selection:text-white"
+	>
+		<main
+			class="min-h-screen p-4 md:p-8 lg:p-12 max-w-7xl mx-auto flex flex-col gap-6"
+		>
+			{/* Header */}
+			<header class="flex justify-between items-center py-4">
+				<div
+					class="font-mono text-2xl font-bold tracking-tighter text-white"
+				>
+					PHS<span class="text-electric">.</span>
+				</div>
+				<nav class="flex gap-4">
+					{
+						socialLinks.map((link) => (
+							<a
+								href={link.href}
+								target="_blank"
+								rel="noopener noreferrer"
+								class="p-2 rounded-full hover:bg-white/10 transition-colors text-slate-400 hover:text-white"
+								aria-label={link.label}
+							>
+								<link.icon className="w-5 h-5" />
+							</a>
+						))
+					}
+				</nav>
+			</header>
+
+			{/* Bento Grid */}
+			<div
+				class="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6 auto-rows-min"
+			>
+				{/* Hero Section - Large Card */}
+				<div
+					class="md:col-span-2 md:row-span-2 bg-slate-800/40 backdrop-blur-md border border-white/5 rounded-3xl p-8 flex flex-col justify-between group hover:border-white/10 transition-all duration-500 relative overflow-hidden"
+				>
+					<div
+						class="absolute top-0 right-0 p-8 opacity-10 group-hover:opacity-20 transition-opacity"
+					>
+						<Code2 className="w-32 h-32 text-electric" />
+					</div>
+
+					<div class="space-y-2 z-10">
+						<span
+							class="font-mono text-electric text-sm tracking-wider uppercase"
+							>Software Developer</span
+						>
+						<h1
+							class="text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-tight"
+						>
+							Engineering Background, <br />
+							<span class="text-slate-400">Practical Focus.</span>
+						</h1>
+					</div>
+
+					<p class="text-lg text-slate-300 max-w-md mt-8 z-10">
+						Transforming complex logic into elegant web solutions.
+						Bridging the gap between industrial precision and modern
+						software development.
+					</p>
+				</div>
+
+				{/* About Me */}
+				<div
+					class="md:col-span-1 md:row-span-2 bg-slate-800/40 backdrop-blur-md border border-white/5 rounded-3xl p-8 flex flex-col gap-6 hover:border-white/10 transition-all duration-300"
+				>
+					<div
+						class="w-12 h-12 rounded-2xl bg-electric/10 flex items-center justify-center text-electric"
+					>
+						<Terminal className="w-6 h-6" />
+					</div>
+
+					<h2 class="text-xl font-bold text-white">About Me</h2>
+
+					<div
+						class="space-y-4 text-slate-300 leading-relaxed text-sm"
+					>
+						<p>
+							My journey started in <strong class="text-white"
+								>Industrial Electronics Engineering</strong
+							> (3 years), where I learned the value of rigorous systems.
+						</p>
+						<p>
+							I pivoted to Vocational Training (DAM & DAW) to
+							follow my true passion: <strong class="text-white"
+								>pure software creation</strong
+							>.
+						</p>
+						<p>
+							Recently completed a 1-year internship at <strong
+								class="text-white">Check24 Spain</strong
+							>, working on high-traffic production systems.
+						</p>
+					</div>
+				</div>
+
+				{/* Experience */}
+				<div
+					class="md:col-span-2 bg-slate-800/40 backdrop-blur-md border border-white/5 rounded-3xl p-8 flex flex-col justify-center hover:border-white/10 transition-all duration-300"
+				>
+					<div class="flex items-center justify-between mb-4">
+						<h2
+							class="text-xl font-bold text-white flex items-center gap-2"
+						>
+							<Container className="w-5 h-5 text-electric" /> Experience
+						</h2>
+						<span
+							class="font-mono text-xs text-slate-500 bg-slate-900/50 px-2 py-1 rounded"
+							>2024 - 2025</span
+						>
+					</div>
+
+					<div
+						class="bg-slate-900/30 rounded-2xl p-6 border border-white/5"
+					>
+						<div class="flex justify-between items-start mb-2">
+							<div>
+								<h3 class="text-lg font-bold text-white">
+									Check24 Spain
+								</h3>
+								<p class="text-electric font-mono text-sm">
+									Full Stack Intern
+								</p>
+							</div>
+						</div>
+						<p class="text-slate-400 text-sm mb-4">
+							Contributed to the development of scalable web
+							applications using Vue.js and TypeScript. Managed
+							containerized environments with Docker and
+							participated in agile workflows.
+						</p>
+						<div class="flex gap-2 flex-wrap">
+							{
+								["Vue.js", "TypeScript", "Docker", "Agile"].map(
+									(tag) => (
+										<span class="text-xs font-mono px-2 py-1 rounded bg-electric/10 text-electric border border-electric/20">
+											{tag}
+										</span>
+									),
+								)
+							}
+						</div>
+					</div>
+				</div>
+
+				{/* Tech Stack */}
+				<div
+					class="md:col-span-1 bg-slate-800/40 backdrop-blur-md border border-white/5 rounded-3xl p-8 flex flex-col gap-6 hover:border-white/10 transition-all duration-300"
+				>
+					<h2 class="text-xl font-bold text-white">Tech Stack</h2>
+
+					<div class="grid grid-cols-2 gap-3">
+						{
+							techStack.map((tech) => (
+								<div class="flex items-center gap-2 p-2 rounded-lg bg-slate-900/50 border border-white/5 hover:border-electric/30 transition-colors group">
+									<tech.icon className="w-4 h-4 text-slate-400 group-hover:text-electric transition-colors" />
+									<span class="text-sm text-slate-300">
+										{tech.name}
+									</span>
+								</div>
+							))
+						}
+					</div>
+				</div>
+
+				{/* Contact */}
+				<div
+					class="md:col-span-3 bg-gradient-to-r from-electric/20 to-purple-500/20 backdrop-blur-md border border-white/5 rounded-3xl p-8 md:p-12 flex flex-col md:flex-row items-center justify-between gap-8 hover:border-white/10 transition-all duration-300"
+				>
+					<div class="text-center md:text-left">
+						<h2
+							class="text-2xl md:text-3xl font-bold text-white mb-2"
+						>
+							Ready to collaborate?
+						</h2>
+						<p class="text-slate-300">
+							I'm currently open to new opportunities in software
+							development.
+						</p>
+					</div>
+
+					<div class="flex gap-4">
+						<a
+							href="mailto:pablohuertasanchez11@gmail.com"
+							class="px-6 py-3 rounded-xl bg-white text-charcoal font-bold hover:bg-slate-200 transition-colors flex items-center gap-2"
+						>
+							<Mail className="w-5 h-5" />
+							Send Email
+						</a>
+						<a
+							href="https://www.linkedin.com/in/pablo-huerta-sánchez-919b36297"
+							target="_blank"
+							rel="noopener noreferrer"
+							class="px-6 py-3 rounded-xl bg-slate-900/50 text-white font-bold border border-white/10 hover:bg-slate-900 transition-colors flex items-center gap-2"
+						>
+							<Linkedin className="w-5 h-5" />
+							LinkedIn
+							<ArrowUpRight className="w-4 h-4 text-slate-500" />
+						</a>
+					</div>
+				</div>
+			</div>
+
+			<footer class="text-center py-8 text-slate-500 text-sm font-mono">
+				<p>
+					&copy; {new Date().getFullYear()} Pablo Huerta Sánchez. Built
+					with Astro & Tailwind.
+				</p>
+			</footer>
+		</main>
 	</body>
 </html>

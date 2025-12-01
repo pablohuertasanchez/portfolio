@@ -1,0 +1,17 @@
+@import "tailwindcss";
+
+@theme {
+  --color-charcoal: #0f172a;
+  --color-electric: #38bdf8;
+  --color-electric-hover: #0ea5e9;
+  
+  --font-sans: "Inter", sans-serif;
+  --font-mono: "JetBrains Mono", monospace;
+}
+
+@layer base {
+  html {
+    background-color: var(--color-charcoal);
+    color: #e2e8f0; /* slate-200 */
+  }
+}
